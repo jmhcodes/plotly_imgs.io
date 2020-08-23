@@ -13138,7 +13138,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">json_normalize</span>
@@ -13155,35 +13155,13 @@ div#notebook {
 
 <span class="c1">#You&#39;ll need to create a youtube_config.py that stores your API key</span>
 <span class="c1">#Within youtube_config.py it should store: developerKey=developerKey, client_secrets_file=pwd/client_secrets_file.json</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;../&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">youtube_config</span> <span class="kn">import</span> <span class="n">host</span>
 <span class="kn">import</span> <span class="nn">youtube_config</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-7b1680c4919e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-red-fg">#You&#39;ll need to create a youtube_config.py that stores your API key</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> <span class="ansi-red-fg">#Within youtube_config.py it should store: developerKey=developerKey, client_secrets_file=pwd/client_secrets_file.json</span>
-<span class="ansi-green-fg">---&gt; 15</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> youtube_config
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;youtube_config&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -13217,7 +13195,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -13282,14 +13260,16 @@ div#notebook {
 <p><font color='blue'> 
 *E1. Write YouTube Data API query function to pull all the videos in a playlist*
 </font>
-<a id='E2'></a></p>
-<h3 id="E2.-Run-playlists()-function-to-return-playlist.json">E2. Run playlists() function to return playlist.json<a class="anchor-link" href="#E2.-Run-playlists()-function-to-return-playlist.json">&#182;</a></h3>
+<a id='E2'></a>
+<font color='black'></p>
+<h3 id="E2.-Run-playlists()-function-to-return-playlist.json">E2. Run playlists() function to return playlist.json<a class="anchor-link" href="#E2.-Run-playlists()-function-to-return-playlist.json">&#182;</a></h3><p>&lt;/font&gt;</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#You&#39;ll need to click on the link below with a youtube account signed in and proceed to the unverified app </span>
@@ -13310,7 +13290,8 @@ div#notebook {
 <em>E1. Write YouTube Data API query function to pull all the videos in a playlist</em></p>
 <p><em>E2. Run playlists() function to return playlist.json</em>
 &lt;/font&gt;</p>
-<p><a id='E3'></a></p>
+<p><font color='black'>
+<a id='E3'></a></p>
 <h3 id="E3.-Visualize-the-playlist.json,-check-it's-keys-and-see-prep-to-transform-the-needed-data">E3. Visualize the playlist.json, check it's keys and see prep to transform the needed data<a class="anchor-link" href="#E3.-Visualize-the-playlist.json,-check-it's-keys-and-see-prep-to-transform-the-needed-data">&#182;</a></h3><blockquote><h3 id="Let's-take-a-look-at-the-json-and-its-keys">Let's take a look at the json and its keys<a class="anchor-link" href="#Let's-take-a-look-at-the-json-and-its-keys">&#182;</a></h3><ul>
 <li>Overall its a pretty clean json and should flatten nicely into a df for us to insert into postgre. </li>
 <li>Check out the yt_json.keys()<ol>
@@ -13324,7 +13305,8 @@ div#notebook {
 </li>
 </ul>
 </li>
-<li>yt_json['pageInfo']has total # of videos and current # returned: {'totalResults': 311, 'resultsPerPage': 50}</li>
+<li>yt_json['pageInfo']has total # of videos and current # returned: {'totalResults': 311, 'resultsPerPage': 50}
+&lt;/font&gt;</li>
 </ol>
 </li>
 </ul>
@@ -13335,7 +13317,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;yt_json.json dict keys:&quot;</span><span class="p">)</span>
@@ -13354,6 +13336,69 @@ div#notebook {
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>yt_json.json dict keys:
+ 	 1. kind
+ 	 2. etag
+ 	 3. nextPageToken
+ 	 4. items
+ 	 5. pageInfo
+	 	 1. yt_json[&#39;kind&#39;] YouTube Data API object returned: youtube#playlistItemListResponse
+	 	 2. yt_json[&#39;etag&#39;] is the etag of the playlist Vdvvj68vlrQTqPqQ9rt0G26dOBA
+	 	 3. yt_json[&#39;nextPageToken&#39;] will have the next page of videos CDIQAA
+	 	 5. yt_json[&#39;pageInfo&#39;]has total # of videos and current # returned {&#39;totalResults&#39;: 311, &#39;resultsPerPage&#39;: 50}
+<span class="ansi-bold">
+ 	 	 4. yt_json[&#39;items&#39;], this contains the video info we are interested in:
+</span></pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;kind&#39;: &#39;youtube#playlistItem&#39;,
+ &#39;etag&#39;: &#39;JFzB7xf4Hx7Ji8Sf6KNAlCvsj50&#39;,
+ &#39;id&#39;: &#39;UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby41NkI0NEY2RDEwNTU3Q0M2&#39;,
+ &#39;snippet&#39;: {&#39;publishedAt&#39;: &#39;2017-08-13T00:19:12Z&#39;,
+  &#39;channelId&#39;: &#39;UCqjLgu2L35BoHNnhQLzmlfQ&#39;,
+  &#39;title&#39;: &#39;Yee&#39;,
+  &#39;description&#39;: &#39;Dinosauri bisesti dalle voci funeste. Original title: &#34;I dinosauri antropomorfi hanno il sangue nel ritmo&#34; (literally &#34;The anthropomorphic dinosaurs have blood in their rhythm&#34;), as opposite to http://youtu.be/e6MLjaKhp5U\nIf you are that &#34;wtf this is so funny i want to know shit&#34;-type of person, here\&#39;s some info/faq:\n- original cartoon: https://youtu.be/brLqiYj5lQw\n- original song: http://youtu.be/v_XJIsDJgXc?t=4m1s (at 4:01)\n- original yee: https://youtu.be/hCKQP9IHHcA\n- &#34;is this a remix?&#34; sort of. i arranged the dinos so that they would sing along with the music and that\&#39;s it\n- &#34;why does the dino say yee?&#34; in the original footage he was calling the other dinosaur by name (&#34;Peek&#34;)\n- &#34;fuck everything! i went through the whole movie and there was no yee sound! i hate my life&#34; dude, yee is only in the italian version of the movie, ciao ciao pizza ferrari\n- &#34;is the italian dub as atrocious as the english one?&#34; you bet\n- &#34;why did you make this video?&#34; i was trying to make a burrito out of your stupid questions and this happened\n- &#34;how did this become so popular?&#34; illuminati&#39;,
+  &#39;thumbnails&#39;: {&#39;default&#39;: {&#39;url&#39;: &#39;https://i.ytimg.com/vi/q6EoRBvdVPQ/default.jpg&#39;,
+    &#39;width&#39;: 120,
+    &#39;height&#39;: 90},
+   &#39;medium&#39;: {&#39;url&#39;: &#39;https://i.ytimg.com/vi/q6EoRBvdVPQ/mqdefault.jpg&#39;,
+    &#39;width&#39;: 320,
+    &#39;height&#39;: 180},
+   &#39;high&#39;: {&#39;url&#39;: &#39;https://i.ytimg.com/vi/q6EoRBvdVPQ/hqdefault.jpg&#39;,
+    &#39;width&#39;: 480,
+    &#39;height&#39;: 360}},
+  &#39;channelTitle&#39;: &#39;kierancaspian&#39;,
+  &#39;playlistId&#39;: &#39;PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo&#39;,
+  &#39;position&#39;: 0,
+  &#39;resourceId&#39;: {&#39;kind&#39;: &#39;youtube#video&#39;, &#39;videoId&#39;: &#39;q6EoRBvdVPQ&#39;}},
+ &#39;contentDetails&#39;: {&#39;videoId&#39;: &#39;q6EoRBvdVPQ&#39;,
+  &#39;videoPublishedAt&#39;: &#39;2012-02-29T19:47:08Z&#39;}}</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13381,7 +13426,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">yt_json</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
@@ -13391,23 +13436,113 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>kind</th>
+      <th>etag</th>
+      <th>id</th>
+      <th>snippet.publishedAt</th>
+      <th>snippet.channelId</th>
+      <th>snippet.title</th>
+      <th>snippet.description</th>
+      <th>snippet.thumbnails.default.url</th>
+      <th>snippet.thumbnails.default.width</th>
+      <th>snippet.thumbnails.default.height</th>
+      <th>...</th>
+      <th>snippet.thumbnails.high.url</th>
+      <th>snippet.thumbnails.high.width</th>
+      <th>snippet.thumbnails.high.height</th>
+      <th>snippet.channelTitle</th>
+      <th>snippet.playlistId</th>
+      <th>snippet.position</th>
+      <th>snippet.resourceId.kind</th>
+      <th>snippet.resourceId.videoId</th>
+      <th>contentDetails.videoId</th>
+      <th>contentDetails.videoPublishedAt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>youtube#playlistItem</td>
+      <td>JFzB7xf4Hx7Ji8Sf6KNAlCvsj50</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+      <td>2017-08-13T00:19:12Z</td>
+      <td>UCqjLgu2L35BoHNnhQLzmlfQ</td>
+      <td>Yee</td>
+      <td>Dinosauri bisesti dalle voci funeste. Original...</td>
+      <td>https://i.ytimg.com/vi/q6EoRBvdVPQ/default.jpg</td>
+      <td>120</td>
+      <td>90</td>
+      <td>...</td>
+      <td>https://i.ytimg.com/vi/q6EoRBvdVPQ/hqdefault.jpg</td>
+      <td>480</td>
+      <td>360</td>
+      <td>kierancaspian</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>0</td>
+      <td>youtube#video</td>
+      <td>q6EoRBvdVPQ</td>
+      <td>q6EoRBvdVPQ</td>
+      <td>2012-02-29T19:47:08Z</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 23 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><font color='blue'> *T1. [pd.json_normalize()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html) is a very convenient method to flatten out json files and has many more kwargs that can be used* </font></p>
-<p><a id='T2'></a></p>
+<p><font color='blue'>*T1. [pd.json_normalize()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html) is a very convenient method to flatten out json files and has many more kwargs that can be used* </font></p>
+<p><a id='T2'></a>
+<font color='black'></p>
 <h3 id="T2.-Confirm-our-pagination-worked-in-the-extract-query-by-checking-df-length-against-total-results-of-playlist-json">T2. Confirm our pagination worked in the extract query by checking df length against total results of playlist json<a class="anchor-link" href="#T2.-Confirm-our-pagination-worked-in-the-extract-query-by-checking-df-length-against-total-results-of-playlist-json">&#182;</a></h3><ul>
 <li>yt_json['pageInfo']['totalResults'] is the total number of videos in the playlist</li>
 <li>if yt_json['pageInfo']['totalResults']==df.shape[0] then you're certain the json query populated all the videos from the playlist</li>
 </ul>
+<p>&lt;/font&gt;</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">playlist_items</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">yt_json</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">])</span>
@@ -13420,6 +13555,26 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of videos returned: 311
+Number of rows in dataframe: 311
+All videos returned? True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13427,11 +13582,13 @@ div#notebook {
 <p><font color='blue'>  <em>T1. <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html">pd.json_normalize()</a> is a very convenient method to flatten out json files and has many more kwargs that can be used</em></p>
 <p><em>T2. Confirm our pagination worked in the extract query by checking df length against total results of playlist json</em>
 &lt;/font&gt;</p>
-<p><a id='T3a'></a></p>
+<p><font color='black'>
+<a id='T3a'></a></p>
 <h3 id="T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">T3. Begin transforming the DataFrame to exactly what we want to load<a class="anchor-link" href="#T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">&#182;</a></h3><ul>
 <li>[ ] <strong>A. Create clickable a clickable links, take a break and check out a video</strong></li>
 <li>[ ] B. Write and use function to split column names into the desired format</li>
-<li>[ ] C. Cast 'videopublishedat' as a DateTime object</li>
+<li>[ ] C. Cast 'videopublishedat' as a DateTime object
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13439,7 +13596,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creates playlist url string to enter into browser for quick watchablity</span>
@@ -13452,6 +13609,37 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0      https://www.youtube.com/watch?v=q6EoRBvdVPQ&amp;li...
+1      https://www.youtube.com/watch?v=8YWl7tDGUPA&amp;li...
+2      https://www.youtube.com/watch?v=6bnanI9jXps&amp;li...
+3      https://www.youtube.com/watch?v=IOzaT_uTNiU&amp;li...
+4      https://www.youtube.com/watch?v=SBeYzoQPbu8&amp;li...
+                             ...                        
+306    https://www.youtube.com/watch?v=5IXQ6f6eMxQ&amp;li...
+307    https://www.youtube.com/watch?v=qPZymccwZm4&amp;li...
+308    https://www.youtube.com/watch?v=9rq2_CSO65Y&amp;li...
+309    https://www.youtube.com/watch?v=1tF2dF67Q2c&amp;li...
+310    https://www.youtube.com/watch?v=wRRsXxE1KVY&amp;li...
+Name: pl_url, Length: 311, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13460,11 +13648,13 @@ div#notebook {
 <em>T1. <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html">pd.json_normalize()</a> is a very convenient method to flatten out json files and has many more kwargs that can be used</em></p>
 <p><em>T2. Confirm our pagination worked in the extract query by checking df length against total results of playlist json</em>
 &lt;/font&gt;</p>
-<p><a id='T3b'></a></p>
+<p><font color='black'>
+<a id='T3b'></a></p>
 <h3 id="T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">T3. Begin transforming the DataFrame to exactly what we want to load<a class="anchor-link" href="#T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">&#182;</a></h3><ul>
 <li>[X] A. Create clickable a clickable links, take a break and check out a video</li>
 <li>[ ] <strong>B. Write and use function to split column names into the desired format and rename columns</strong></li>
-<li>[ ] C. Cast 'videopublishedat' as a DateTime object</li>
+<li>[ ] C. Cast 'videopublishedat' as a DateTime object
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13480,7 +13670,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split_col_names</span><span class="p">(</span><span class="n">list_i</span><span class="p">):</span>
@@ -13514,7 +13704,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#select the cols to import into the db</span>
@@ -13542,11 +13732,13 @@ div#notebook {
 <em>T1. <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html">pd.json_normalize()</a> is a very convenient method to flatten out json files and has many more kwargs that can be used</em></p>
 <p><em>T2. Confirm our pagination worked in the extract query by checking df length against total results of playlist json</em>
 &lt;/font&gt;</p>
-<p><a id='T3c'></a></p>
+<p><a id='T3c'></a>
+<font color='black'></p>
 <h3 id="T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">T3. Begin transforming the DataFrame to exactly what we want to load<a class="anchor-link" href="#T3.-Begin-transforming-the-DataFrame-to-exactly-what-we-want-to-load">&#182;</a></h3><ul>
 <li>[X] A. Create clickable a clickable links, take a break and check out a video</li>
 <li>[X] B. Write and use function to split column names into the desired format and rename columns</li>
-<li>[ ] <strong>C. Cast 'videopublishedat' as a DateTime object</strong></li>
+<li>[ ] <strong>C. Cast 'videopublishedat' as a DateTime object</strong>
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13554,7 +13746,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_playlist</span><span class="p">[</span><span class="s1">&#39;videopublishedat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">final_playlist</span><span class="p">[</span><span class="s1">&#39;videopublishedat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> 
@@ -13575,13 +13767,136 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_playlist</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>description</th>
+      <th>pl_url</th>
+      <th>thumbnails</th>
+      <th>videopublishedat</th>
+      <th>channeltitle</th>
+      <th>position</th>
+      <th>resourceid</th>
+      <th>playlistid</th>
+      <th>etag</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yee</td>
+      <td>Dinosauri bisesti dalle voci funeste. Original...</td>
+      <td>https://www.youtube.com/watch?v=q6EoRBvdVPQ&amp;li...</td>
+      <td>https://i.ytimg.com/vi/q6EoRBvdVPQ/hqdefault.jpg</td>
+      <td>2012-02-29 19:47:08</td>
+      <td>kierancaspian</td>
+      <td>0</td>
+      <td>q6EoRBvdVPQ</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>JFzB7xf4Hx7Ji8Sf6KNAlCvsj50</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>color red</td>
+      <td>Instagram: @jimmynez</td>
+      <td>https://www.youtube.com/watch?v=8YWl7tDGUPA&amp;li...</td>
+      <td>https://i.ytimg.com/vi/8YWl7tDGUPA/hqdefault.jpg</td>
+      <td>2014-09-06 03:39:52</td>
+      <td>kierancaspian</td>
+      <td>1</td>
+      <td>8YWl7tDGUPA</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>dZ6i6SJWZcvZlrVQ2QuLDPKWEcU</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Terrible Mall Commercial</td>
+      <td>Now that's a catchy tune!</td>
+      <td>https://www.youtube.com/watch?v=6bnanI9jXps&amp;li...</td>
+      <td>https://i.ytimg.com/vi/6bnanI9jXps/hqdefault.jpg</td>
+      <td>2014-08-17 20:45:59</td>
+      <td>kierancaspian</td>
+      <td>2</td>
+      <td>6bnanI9jXps</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>B8HpEi2XY612lgHPLEQZBa0VZB8</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[HD] Sandra Annenberg Cai Ao Vivo no Programa ...</td>
+      <td></td>
+      <td>https://www.youtube.com/watch?v=IOzaT_uTNiU&amp;li...</td>
+      <td>https://i.ytimg.com/vi/IOzaT_uTNiU/hqdefault.jpg</td>
+      <td>2020-05-09 23:13:15</td>
+      <td>kierancaspian</td>
+      <td>3</td>
+      <td>IOzaT_uTNiU</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>6gP0PMMV_sYMeVrykUdSZ0RmpCA</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>name a yellow fruit</td>
+      <td></td>
+      <td>https://www.youtube.com/watch?v=SBeYzoQPbu8&amp;li...</td>
+      <td>https://i.ytimg.com/vi/SBeYzoQPbu8/hqdefault.jpg</td>
+      <td>2013-10-30 19:20:15</td>
+      <td>kierancaspian</td>
+      <td>4</td>
+      <td>SBeYzoQPbu8</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>tn0QkHggUIceO1O1rg47GpRRTR0</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13618,7 +13933,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import the sql and connect libraries for psycopg2</span>
@@ -13651,7 +13966,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a global string for the PostgreSQL db name</span>
@@ -13679,7 +13994,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Set up the connection string to your db</span>
@@ -13705,6 +14020,25 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>psycopg2 connection:
+ dsn: &#39;user=postgres password=xxx dbname=postgres host=127.0.0.1&#39;, closed: 0&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13712,10 +14046,12 @@ div#notebook {
 <p><font color='blue'> 
 *L1.  Use psycopg2 to connect to our new Postgre DB*
 </font></p>
+<p><font color='black'></p>
 <p><a id='L2'></a></p>
 <h3 id="L2.-Create-a-youtube_test-DATABASE">L2. Create a youtube_test DATABASE<a class="anchor-link" href="#L2.-Create-a-youtube_test-DATABASE">&#182;</a></h3><ul>
 <li>Below we use our cur object method execute to create a youtube_test DATABASE and playlists TABLE</li>
-<li>This table will store the our final_playlist DataFrame</li>
+<li>This table will store the our final_playlist DataFrame
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13762,9 +14098,11 @@ div#notebook {
 <p><font color='blue'> <em>L1.  Use psycopg2 to connect to our new Postgre DB</em></p>
 <p><em>L2. Create a youtube_test DATABASE.</em>
 &lt;/font&gt;</p>
-<p><a id='L3'></a></p>
+<p><a id='L3'></a>
+<font color='black'></p>
 <h3 id="L3.-Create-playlist-TABLE-in-the-new-youtube_test-DATABASE">L3. Create playlist TABLE in the new youtube_test DATABASE<a class="anchor-link" href="#L3.-Create-playlist-TABLE-in-the-new-youtube_test-DATABASE">&#182;</a></h3><ul>
-<li>[ ] <strong>A. We'll have to connect to the new youtube_test DATABASE</strong></li>
+<li>[ ] <strong>A. We'll have to connect to the new youtube_test DATABASE</strong>
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13772,7 +14110,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;youtube_test&#39;</span>
@@ -13799,6 +14137,25 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>psycopg2 connection:
+ dsn: &#39;user=postgres password=xxx dbname=youtube_test host=127.0.0.1&#39;, closed: 0&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13806,9 +14163,11 @@ div#notebook {
 <p><font color='blue'> <em>L1.  Use psycopg2 to connect to our new Postgre DB</em></p>
 <p><em>L2. Create a youtube_test DATABASE.</em>
 &lt;/font&gt;</p>
-<p><a id='L3a'></a></p>
+<p><a id='L3a'></a>
+<font color='black'></p>
 <h3 id="L3.-Create-playlist-TABLE-in-the-new-youtube_test-DATABASE">L3. Create playlist TABLE in the new youtube_test DATABASE<a class="anchor-link" href="#L3.-Create-playlist-TABLE-in-the-new-youtube_test-DATABASE">&#182;</a></h3><ul>
-<li>A. [X] <em>We'll have to connect to the new youtube_test DATABASE</em></li>
+<li>A. [X] <em>We'll have to connect to the new youtube_test DATABASE</em>
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13861,10 +14220,12 @@ div#notebook {
 <li>[X] We'll have to connect to the new youtube_test DATABASE
 &lt;/font&gt;</li>
 </ul>
-<p><a id='L4'></a></p>
+<p><a id='L4'></a>
+<font color='black'></p>
 <h3 id="L4.-Use-sqlalchemy-to-upload-our-DataFrame-to-our-new-playlists-table">L4. Use sqlalchemy to upload our DataFrame to our new playlists table<a class="anchor-link" href="#L4.-Use-sqlalchemy-to-upload-our-DataFrame-to-our-new-playlists-table">&#182;</a></h3><ul>
 <li>sqlalchemy is another common connection method used to read and write data to a db from python<ul>
-<li>sqlalchemy really works like an <a href="https://docs.sqlalchemy.org/en/13/core/engines.html">ORM</a> </li>
+<li>sqlalchemy really works like an <a href="https://docs.sqlalchemy.org/en/13/core/engines.html">ORM</a> 
+&lt;/font&gt;</li>
 </ul>
 </li>
 </ul>
@@ -13901,14 +14262,16 @@ div#notebook {
 </ul>
 <p><em>L4. Use sqlalchemy to upload our DataFrame to our new playlists table</em>
 &lt;/font&gt;</p>
-<p><a id='L5a'></a></p>
+<p><a id='L5a'></a>
+<font color='black'></p>
 <h3 id="L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">L5. Confirm our DataFrame uploaded to our desired location<a class="anchor-link" href="#L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">&#182;</a></h3><ul>
 <li>[ ] <strong>A. Reconnect with psycopg2</strong></li>
 <li>[ ] B. Write function to get the column names of the table for our sql_df DataFrame<ul>
 <li>get_cols is a utility function needed to find the column names from a postgres sql table</li>
 </ul>
 </li>
-<li>[ ] C. query the playlists table to view your data</li>
+<li>[ ] C. query the playlists table to view your data
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13916,7 +14279,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Set up the connection string to your db</span>
@@ -13942,6 +14305,24 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>psycopg2 connect() ERROR: name &#39;connect&#39; is not defined
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13955,14 +14336,15 @@ div#notebook {
 <p><em>L4. Use sqlalchemy to upload our DataFrame to our new playlists table</em>
 &lt;/font&gt;</p>
 <p><a id='L5b'></a>
-L5. <strong>Confirm our DataFrame uploaded to our desired location</strong></p>
-<ul>
+<font color='black'></p>
+<h3 id="L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">L5. Confirm our DataFrame uploaded to our desired location<a class="anchor-link" href="#L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">&#182;</a></h3><ul>
 <li>[X] <em>A. Reconnect with psycopg2</em></li>
 <li>[ ] <strong>B. Write function to get the column names of the table for our sql_df DataFrame</strong><ul>
 <li>get_cols is a utility function needed to find the column names from a postgres sql table</li>
 </ul>
 </li>
-<li>[ ] C. query the playlists table to view your data</li>
+<li>[ ] C. query the playlists table to view your data
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -13970,7 +14352,7 @@ L5. <strong>Confirm our DataFrame uploaded to our desired location</strong></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_cols</span><span class="p">(</span><span class="n">table</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
@@ -14050,14 +14432,16 @@ L5. <strong>Confirm our DataFrame uploaded to our desired location</strong></p>
 <p><em>L4. Use sqlalchemy to upload our DataFrame to our new playlists table</em>
 &lt;/font&gt;
 <br>
-<a id='L5c'></a></p>
+<a id='L5c'></a>
+<font color='black'></p>
 <h3 id="L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">L5. Confirm our DataFrame uploaded to our desired location<a class="anchor-link" href="#L5.-Confirm-our-DataFrame-uploaded-to-our-desired-location">&#182;</a></h3><ul>
 <li>[X] <em>A. Reconnect with psycopg2</em></li>
 <li>[X] <em>B. Write function to get the column names of the table for our sql_df DataFrame</em><ul>
 <li>get_cols is a utility function needed to find the column names from a postgres sql table</li>
 </ul>
 </li>
-<li>[ ] <strong>C. query the playlists table to view your data</strong></li>
+<li>[ ] <strong>C. query the playlists table to view your data</strong>
+&lt;/font&gt;</li>
 </ul>
 
 </div>
@@ -14065,7 +14449,7 @@ L5. <strong>Confirm our DataFrame uploaded to our desired location</strong></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span> 
@@ -14085,16 +14469,245 @@ L5. <strong>Confirm our DataFrame uploaded to our desired location</strong></p>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>col names pull sql query:
+ SELECT column_name FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = &#39;playlists&#39;;
+col names:
+ [&#39;title&#39;, &#39;description&#39;, &#39;pl_url&#39;, &#39;thumbnails&#39;, &#39;videopublishedat&#39;, &#39;channeltitle&#39;, &#39;position&#39;, &#39;resourceid&#39;, &#39;playlistid&#39;, &#39;etag&#39;, &#39;id&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sql_df</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>title</th>
+      <th>description</th>
+      <th>pl_url</th>
+      <th>thumbnails</th>
+      <th>videopublishedat</th>
+      <th>channeltitle</th>
+      <th>position</th>
+      <th>resourceid</th>
+      <th>playlistid</th>
+      <th>etag</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Yee</td>
+      <td>Dinosauri bisesti dalle voci funeste. Original...</td>
+      <td>https://www.youtube.com/watch?v=q6EoRBvdVPQ&amp;li...</td>
+      <td>https://i.ytimg.com/vi/q6EoRBvdVPQ/hqdefault.jpg</td>
+      <td>2012-02-29 19:47:08</td>
+      <td>kierancaspian</td>
+      <td>0</td>
+      <td>q6EoRBvdVPQ</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>JFzB7xf4Hx7Ji8Sf6KNAlCvsj50</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>color red</td>
+      <td>Instagram: @jimmynez</td>
+      <td>https://www.youtube.com/watch?v=8YWl7tDGUPA&amp;li...</td>
+      <td>https://i.ytimg.com/vi/8YWl7tDGUPA/hqdefault.jpg</td>
+      <td>2014-09-06 03:39:52</td>
+      <td>kierancaspian</td>
+      <td>1</td>
+      <td>8YWl7tDGUPA</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>dZ6i6SJWZcvZlrVQ2QuLDPKWEcU</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Terrible Mall Commercial</td>
+      <td>Now that's a catchy tune!</td>
+      <td>https://www.youtube.com/watch?v=6bnanI9jXps&amp;li...</td>
+      <td>https://i.ytimg.com/vi/6bnanI9jXps/hqdefault.jpg</td>
+      <td>2014-08-17 20:45:59</td>
+      <td>kierancaspian</td>
+      <td>2</td>
+      <td>6bnanI9jXps</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>B8HpEi2XY612lgHPLEQZBa0VZB8</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[HD] Sandra Annenberg Cai Ao Vivo no Programa ...</td>
+      <td></td>
+      <td>https://www.youtube.com/watch?v=IOzaT_uTNiU&amp;li...</td>
+      <td>https://i.ytimg.com/vi/IOzaT_uTNiU/hqdefault.jpg</td>
+      <td>2020-05-09 23:13:15</td>
+      <td>kierancaspian</td>
+      <td>3</td>
+      <td>IOzaT_uTNiU</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>6gP0PMMV_sYMeVrykUdSZ0RmpCA</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>name a yellow fruit</td>
+      <td></td>
+      <td>https://www.youtube.com/watch?v=SBeYzoQPbu8&amp;li...</td>
+      <td>https://i.ytimg.com/vi/SBeYzoQPbu8/hqdefault.jpg</td>
+      <td>2013-10-30 19:20:15</td>
+      <td>kierancaspian</td>
+      <td>4</td>
+      <td>SBeYzoQPbu8</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>tn0QkHggUIceO1O1rg47GpRRTR0</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>306</th>
+      <td>test video please do not watch</td>
+      <td>idk how this video is still so popular, check ...</td>
+      <td>https://www.youtube.com/watch?v=5IXQ6f6eMxQ&amp;li...</td>
+      <td>https://i.ytimg.com/vi/5IXQ6f6eMxQ/hqdefault.jpg</td>
+      <td>2015-02-18 13:27:46</td>
+      <td>kierancaspian</td>
+      <td>306</td>
+      <td>5IXQ6f6eMxQ</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>TmgHYZbsFscgyGOd9JZtJ-bpq_k</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>307</th>
+      <td>Cry Me To The Moon</td>
+      <td>Original is "Fly me to the Moon"\n\nPatreon: h...</td>
+      <td>https://www.youtube.com/watch?v=qPZymccwZm4&amp;li...</td>
+      <td>https://i.ytimg.com/vi/qPZymccwZm4/hqdefault.jpg</td>
+      <td>2012-12-27 06:02:41</td>
+      <td>kierancaspian</td>
+      <td>307</td>
+      <td>qPZymccwZm4</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>GNj2Mwp4gTkAPdePekg3PfNhYYI</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>308</th>
+      <td>Evangelion in a Nutshell</td>
+      <td>If you have a weak heart or liver, I strongly ...</td>
+      <td>https://www.youtube.com/watch?v=9rq2_CSO65Y&amp;li...</td>
+      <td>https://i.ytimg.com/vi/9rq2_CSO65Y/hqdefault.jpg</td>
+      <td>2013-01-19 19:06:29</td>
+      <td>kierancaspian</td>
+      <td>308</td>
+      <td>9rq2_CSO65Y</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>cpGb5RuXR8dI8_LfkO8R15rxY7k</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>309</th>
+      <td>"GOLD BOND LIQUI-SHAQ" - TV SHERIFF VIDEO REMIX</td>
+      <td>A new ditty from TV SHERIFF!! Original sponsor...</td>
+      <td>https://www.youtube.com/watch?v=1tF2dF67Q2c&amp;li...</td>
+      <td>https://i.ytimg.com/vi/1tF2dF67Q2c/hqdefault.jpg</td>
+      <td>2014-12-03 08:46:28</td>
+      <td>kierancaspian</td>
+      <td>309</td>
+      <td>1tF2dF67Q2c</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>juaEoG5hoHl-zX0DFu10fvw0DLs</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+    <tr>
+      <th>310</th>
+      <td>John Cena Prank Call</td>
+      <td>WWE</td>
+      <td>https://www.youtube.com/watch?v=wRRsXxE1KVY&amp;li...</td>
+      <td>https://i.ytimg.com/vi/wRRsXxE1KVY/hqdefault.jpg</td>
+      <td>2014-03-11 14:27:48</td>
+      <td>kierancaspian</td>
+      <td>310</td>
+      <td>wRRsXxE1KVY</td>
+      <td>PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo</td>
+      <td>_k23SXKkyzuZHIPj5XFptFWGvtQ</td>
+      <td>UExGc1FsZUFXWHNqXzR5RGVlYmlJQURkSDVGTWF5QmlKby...</td>
+    </tr>
+  </tbody>
+</table>
+<p>311 rows × 11 columns</p>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
